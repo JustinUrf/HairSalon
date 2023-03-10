@@ -4,7 +4,7 @@ using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HairSalon
+namespace HairSalon.Controllers
 {
   public class StylistsController : Controller
   {
@@ -32,6 +32,12 @@ namespace HairSalon
       _db.Stylists.Add(stylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
   }
 }
