@@ -11,5 +11,6 @@
   <h3>@Html.DisplayNameFor(model => model.Stylist): @Html.DisplayFor(model => model.Stylist.Details)</h3>
 
   <p>@Html.ActionLink("Back to list", "Index")</p>
+  <p>@Html.ActionLink("Remove a client", "Delete", new { id = Model.ClientId})</p>
 </div>
 
