@@ -12,7 +12,7 @@ Layout = "_Layout";
 <ul>
   @foreach(Stylist stylist in Model)
   {
-    <li>@Html.ActionLink($"{stylist.Details}", "Details", "Stylists", new { id = stylist.StylistId }) </li>
+    <li>@Html.ActionLink($"{stylist.Details}", "Details",  new { id = stylist.StylistId }) </li>
   }
 </ul>
 
