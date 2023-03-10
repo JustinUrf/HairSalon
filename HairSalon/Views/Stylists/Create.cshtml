@@ -5,12 +5,13 @@
 <div class="container">
   @model HairSalon.Models.Stylist
 
-<h4>Add a new Stylist</h4>
-@using (Html.BeginForm())
-{
+  <h4>Add a new Stylist</h4>
+  @using (Html.BeginForm())
+  {
   <p>Name of your new Stylist</p>
   @Html.TextBoxFor(model => model.Details)
-  <br>
   <input type='submit' value='Add new stylist'>
   }
+  <br>
+  <p>@Html.ActionLink("Back to Stylists", "Index")</p>
 </div>
