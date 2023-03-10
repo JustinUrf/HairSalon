@@ -38,14 +38,14 @@ namespace HairSalon.Controllers
       }
       _db.Clients.Add(client);
       _db.SaveChanges();
-      return RedirectToaction("Index");
+      return RedirectToAction("Index");
     
     }
 
     public ActionResult Details(int id)
     {
       Client thisClient = _db.Clients.Include(client => client.Stylist).FirstOrDefault(client => client.ClientId == id);
-      return view(thisClient);
+      return View(thisClient);
     }
 
   }
