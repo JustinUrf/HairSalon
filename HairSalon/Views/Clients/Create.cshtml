@@ -4,20 +4,22 @@
 
 @model HairSalon.Models.Client
 
-<h4>Add a new client</h4>
+<div class="container">
+  <h4>Add a new client</h4>
 
-<p>You need to have at least one Stylist before this works!</p>
-<p>To add a newly hired Stylist : @Html.ActionLink("Click Here", "Create", "Stylists") </p>
+  <p>You need to have at least one Stylist before this works!</p>
+  <p>To add a newly hired Stylist : @Html.ActionLink("Click Here", "Create", "Stylists") </p>
 
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
 
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
+    @Html.LabelFor(model => model.Stylist)
+    @Html.DropDownList("StylistId")
 
-  <input type="submit" value="Add new client" class="btn btn-success"/>
-}
+    <input type="submit" value="Add new client" class="btn btn-success"/>
+  }
 
-<p>@Html.ActionLink("Show all Clients", "Index")</p>
+  <p>@Html.ActionLink("Show all Clients", "Index")</p>
+</div>

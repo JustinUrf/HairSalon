@@ -5,22 +5,24 @@
 @model HairSalon.Models.Stylist
 @using HairSalon.Models
 
-<h2>Stylist Clients</h2>
-<h3>@Html.DisplayNameFor(model => model.Details): @Html.DisplayFor(model => model.Details) </h3>
+<div class="container">
+  <h2>Stylist Clients</h2>
+  <h3>@Html.DisplayNameFor(model => model.Details): @Html.DisplayFor(model => model.Details) </h3>
 
-@if (Model.Clients.Count == 0)
-{
-  <h3>No Clients are listed for this stylist</h3>
-}
-else
-{
-  <h3>Clients:</h3>
-  <ul>
-    @foreach (Client client in Model.Clients)
-    {
-      <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId})</li>
-    }
-  </ul>
-}
+  @if (Model.Clients.Count == 0)
+  {
+    <h3>No Clients are listed for this stylist</h3>
+  }
+  else
+  {
+    <h3>Clients:</h3>
+    <ul>
+      @foreach (Client client in Model.Clients)
+      {
+        <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId})</li>
+      }
+    </ul>
+  }
 
-<p>@Html.ActionLink("Back to Stylists", "Index")</p>
+  <p>@Html.ActionLink("Back to Stylists", "Index")</p>
+</div>
